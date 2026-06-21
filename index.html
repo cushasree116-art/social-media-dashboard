@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Dashboard</h2>
+
+    <button onclick="showSection('home')">🏠 Dashboard</button>
+    <button onclick="showSection('charts')">📊 Analytics</button>
+    <button onclick="showSection('stats')">📈 Reports</button>
+    <button onclick="showSection('activity')">🔔 Notifications</button>
+    <button onclick="toggleTheme()">⚙ Settings</button>
+</div>
+
+<div class="main">
+
+    <header>
+        <h1>Social Media Dashboard</h1>
+        <div class="header-right">
+            <input type="text" placeholder="Search">
+            <span id="clock"></span>
+        </div>
+    </header>
+
+    <section class="cards" id="home">
+
+        <div class="card instagram" onclick="openModal('Instagram')">
+            <h2>Instagram</h2>
+            <h3 id="instaFollowers">15420</h3>
+            <p>Followers</p>
+            <span>+12%</span>
+        </div>
+
+        <div class="card twitter" onclick="openModal('Twitter')">
+            <h2>Twitter</h2>
+            <h3 id="twitterFollowers">8500</h3>
+            <p>Followers</p>
+            <span>+8%</span>
+        </div>
+
+        <div class="card youtube" onclick="openModal('YouTube')">
+            <h2>YouTube</h2>
+            <h3 id="youtubeFollowers">22100</h3>
+            <p>Subscribers</p>
+            <span>+18%</span>
+        </div>
+
+        <div class="card facebook" onclick="openModal('Facebook')">
+            <h2>Facebook</h2>
+            <h3 id="facebookFollowers">12300</h3>
+            <p>Followers</p>
+            <span>+10%</span>
+        </div>
+
+    </section>
+
+    <section id="stats">
+        <h2>Total Statistics</h2>
+
+        <div class="stats-box">
+            <div>Total Followers: 58,320</div>
+            <div>Total Likes: 35,000</div>
+            <div>Total Posts: 805</div>
+            <div>Engagement: 12%</div>
+        </div>
+    </section>
+
+    <section id="charts">
+        <h2>Followers Growth</h2>
+        <canvas id="myChart"></canvas>
+    </section>
+
+    <section id="activity">
+        <h2>Recent Activities</h2>
+
+        <ul id="activityList">
+            <li>+120 Instagram followers</li>
+            <li>+80 YouTube subscribers</li>
+            <li>+45 Twitter likes</li>
+        </ul>
+    </section>
+
+    <button class="update-btn" onclick="updateStats()">
+        Update Statistics
+    </button>
+
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span onclick="closeModal()" class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
